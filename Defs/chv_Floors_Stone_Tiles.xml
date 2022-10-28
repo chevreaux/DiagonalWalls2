@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!-- Stone Tiles-->
+
+  <DesignatorDropdownGroupDef>
+    <defName>Floor_Tile_Diagonal</defName>
+  </DesignatorDropdownGroupDef>
+
+    <ThingDef ParentName="DiagonalFloorBase" Name="DiagonalTileStoneBase" Abstract="True">
+    <description>Diagonal stone tiles. They are cheaper and easier to lay. Diagonal tiles do not act as real flooring.</description>
+    <statBases>
+      <MaxHitPoints>55</MaxHitPoints>
+      <WorkToBuild>300</WorkToBuild>
+      <Mass>1</Mass>
+      <Flammability>0.0</Flammability>
+      <Beauty>0</Beauty>
+    </statBases>
+    <designatorDropdown>Floor_Tile_Diagonal</designatorDropdown>
+      <researchPrerequisites>
+      <li>Stonecutting</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+  </ThingDef>  
+
+  <ThingDef ParentName="DiagonalTileStoneBase">
+    <defName>DiagonalTileSandstone</defName>
+    <label>diagonal sandstone tile</label>
+    <graphicData>
+      <texPath>DiagonalRim/Floors/StoneTile/SandstoneTile/tile</texPath>
+    </graphicData>
+            <uiIconPath>DiagonalRim/Floors/StoneTile/SandstoneTile/MenuIcon</uiIconPath>
+
+        <costList>
+      <BlocksSandstone>2</BlocksSandstone>
+    </costList>
+  </ThingDef>  
+
+    <ThingDef ParentName="DiagonalTileStoneBase">
+    <defName>DiagonalTileGranite</defName>
+    <label>diagonal granite tile</label>
+    <graphicData>
+      <texPath>DiagonalRim/Floors/StoneTile/GraniteTile/tile</texPath>
+    </graphicData>
+                <uiIconPath>DiagonalRim/Floors/StoneTile/GraniteTile/MenuIcon</uiIconPath>
+
+        <costList>
+      <BlocksGranite>2</BlocksGranite>
+    </costList>
+  </ThingDef>  
+
+    <ThingDef ParentName="DiagonalTileStoneBase">
+    <defName>DiagonalTileLimestone</defName>
+    <label>diagonal limestone tile</label>
+    <graphicData>
+      <texPath>DiagonalRim/Floors/StoneTile/LimestoneTile/tile</texPath>
+    </graphicData>
+                <uiIconPath>DiagonalRim/Floors/StoneTile/LimestoneTile/MenuIcon</uiIconPath>
+
+        <costList>
+      <BlocksLimestone>2</BlocksLimestone>
+    </costList>
+  </ThingDef>  
+
+    <ThingDef ParentName="DiagonalTileStoneBase">
+    <defName>DiagonalTileSlate</defName>
+    <label>diagonal slate tile</label>
+    <graphicData>
+      <texPath>DiagonalRim/Floors/StoneTile/SlateTile/tile</texPath>
+    </graphicData>
+                <uiIconPath>DiagonalRim/Floors/StoneTile/SlateTile/MenuIcon</uiIconPath>
+
+        <costList>
+      <BlocksSlate>2</BlocksSlate>
+    </costList>
+  </ThingDef>  
+
+  <ThingDef ParentName="DiagonalTileStoneBase">
+    <defName>DiagonalTileMarble</defName>
+    <label>diagonal marble tile</label>
+    <graphicData>
+      <texPath>DiagonalRim/Floors/StoneTile/MarbleTile/tile</texPath>
+    </graphicData>
+                <uiIconPath>DiagonalRim/Floors/StoneTile/MarbleTile/MenuIcon</uiIconPath>
+
+      <costList>
+      <BlocksMarble>2</BlocksMarble>
+    </costList>
+  </ThingDef>
+
+</Defs>  

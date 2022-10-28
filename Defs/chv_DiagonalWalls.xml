@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase" Name="DiagonalWallBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <graphicClass>Graphic_Appearances</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>135</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <MeditationFocusStrength>0.22</MeditationFocusStrength>
+    </statBases>
+    <costStuffCount>5</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded> <!-- Best affordance needed for stone -->
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>Structure</designationCategory>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <building>
+      <isInert>true</isInert>
+      <isPlaceOverableWall>true</isPlaceOverableWall>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <comps>
+      <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes>
+          <li>Minimal</li>
+        </focusTypes>
+      </li>
+    </comps>
+    <damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+      <li>
+        <damageDef>Thump</damageDef>
+        <multiplier>4</multiplier>
+      </li>
+    </damageMultipliers>
+    <castEdgeShadows>false</castEdgeShadows>
+    <coversFloor>false</coversFloor>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalWallBase">
+  <defName>rgh_DiagonalWall</defName>
+  <description>A standard diagonal wall. Use for walls that are 1-tile thick.</description>
+  <label>dia. wall (thin)</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/DiagonalWall</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/DiagonalWall/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/DiagonalWall/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/DiagonalWall/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/DiagonalWall/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalWallBase">
+  <defName>rgh_ConnectorWallR</defName>
+  <description>Gives a smoother connection between a diagonal wall and normal wall.</description>
+  <label>connector wall (right)</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/ConnectorWallR</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/ConnectorWallR/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/ConnectorWallR/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/ConnectorWallR/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/ConnectorWallR/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalWallBase">
+  <defName>rgh_ConnectorWallL</defName>
+  <description>Gives a smoother connection between a diagonal wall and normal wall.</description>
+  <label>connector wall (left)</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/ConnectorWallL</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/ConnectorWallL/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/ConnectorWallL/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/ConnectorWallL/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/ConnectorWallL/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalWallBase">
+  <defName>rgh_FilledWall</defName>
+  <description>A diagonal wall with the corner filled in. Use for walls that are more than 1 tile thick.</description>
+  <label>dia. wall (thick)</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/FilledWall</texPath>
+    <linkType>Basic</linkType>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/FilledWall/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/FilledWall/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/FilledWall/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/FilledWall/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalWallBase">
+  <defName>rgh_FillingA</defName>
+  <description>Place inside thick walls to fix texture issues.</description>
+  <label>filling 1</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/FillingA</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/FillingA/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/FillingA/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/FillingA/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/FillingA/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalWallBase">
+  <defName>rgh_FillingB</defName>
+  <description>Place inside thick walls to fix texture issues.</description>
+  <label>filling 2</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/FillingB</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/FillingB/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/FillingB/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/FillingB/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/FillingB/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalWallBase">
+  <defName>rgh_FillingC</defName>
+  <description>Place inside thick walls to fix texture issues.</description>
+  <label>filling 3</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/FillingC</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/FillingC/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/FillingC/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/FillingC/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/FillingC/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalWallBase">
+  <defName>rgh_DiagonalDoorwayA</defName>
+  <description>Diagonal corner piece allowing for a door.</description>
+  <label>dia. doorway 1</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/DoorwayA</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/DoorwayA/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/DoorwayA/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/DoorwayA/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/DoorwayA/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalWallBase">
+  <defName>rgh_DiagonalDoorwayB</defName>
+  <description>Diagonal corner piece allowing for a door.</description>
+  <label>dia. doorway 2</label>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/DoorwayB</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/DoorwayB/Blueprint</texPath>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/DoorwayB/MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>DiagonalRim/Walls/DoorwayB/MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>DiagonalRim/Walls/DoorwayB/MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+ <ThingDef ParentName="PowerConduit">
+    <defName>diagonalConduit</defName>
+    <label>dia. conduit</label>
+    <description>A bundle of electrical cables for moving power around. Can be placed under walls and other buildings.</description>
+    <graphicData>
+      <texPath>DiagonalRim/PowerConduit/PowerConduit_Atlas</texPath>
+    </graphicData>
+    <uiIconPath>DiagonalRim/PowerConduit/PowerConduit_MenuIcon</uiIconPath>
+    <building>
+      <blueprintGraphicData>
+        <texPath>DiagonalRim/PowerConduit/PowerConduit_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+  </ThingDef>
+
+
+<ThingDef ParentName="BuildingBase">
+    <defName>DiagonalSandbags</defName>
+    <label>dia. sandbags</label>
+    <description>Bags of locally-sourced dirt or sand, stacked for use as cover. Sandbags are ugly, but provide better cover than other low objects.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>DiagonalRim/Walls/Sandbags/Sandbags_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>Basic</linkType>
+      <linkFlags>
+        <li>Sandbags</li>
+      </linkFlags>
+    </graphicData>
+    <uiIconPath>DiagonalRim/Walls/Sandbags/Sandbags_MenuIcon</uiIconPath>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>42</pathCost>
+    <pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.55</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Beauty>-10</Beauty>
+      <WorkToBuild>180</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isInert>true</isInert>
+      <blueprintGraphicData>
+        <texPath>DiagonalRim/Walls/Sandbags/Sandbags_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <colorPerStuff>
+      <li>
+        <stuff>Cloth</stuff>
+        <color>(139,122,87)</color>
+      </li>
+    </colorPerStuff>
+    <costStuffCount>5</costStuffCount>
+    <filthLeaving>SandbagRubble</filthLeaving>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <repairEffect>ConstructDirt</repairEffect>
+    <designationHotKey>Misc1</designationHotKey>
+  </ThingDef>
+
+
+</Defs>

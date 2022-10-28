@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TerrainDef ParentName="NaturalTerrainBase">
+    <defName>HardSoil</defName>
+    <label>hard soil</label>
+    <description>Soil with a hard edge. Will not blend with other flooring.</description>
+    <designationCategory>Floors</designationCategory>
+    <texturePath>Terrain/Surfaces/Soil</texturePath>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <layerable>true</layerable>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>340</renderPrecedence>
+    <pathCost>2</pathCost>
+    <statBases>
+      <Beauty>-1</Beauty>
+      <Cleanliness>-1</Cleanliness>
+      <WorkToBuild>50</WorkToBuild>
+      <BeautyOutdoors>0</BeautyOutdoors>
+    </statBases>
+    <scatterType>Rocky</scatterType>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>GrowSoil</li>
+      <li>Diggable</li>
+    </affordances>
+    <generatedFilth>Filth_Dirt</generatedFilth>
+    <fertility>1.0</fertility>
+    <takeFootprints>True</takeFootprints>
+    <tools>
+      <li>
+        <label>dirt</label>
+        <capacities>
+          <li>KickMaterialInEyes</li>
+        </capacities>
+        <hediff>DirtInEyes</hediff>
+        <cooldownTime>1.5</cooldownTime>
+      </li>
+    </tools>
+    <constructEffect>ConstructDirt</constructEffect>
+    <placeWorkers>
+      <li>Placeworker_HardSoil.Placeworker_HardSoil</li> 
+    </placeWorkers>
+  </TerrainDef>
+
+  <ThingDef ParentName="BuildingBase" Name="DiagonalFloorBase" Abstract="True">
+    <altitudeLayer>Floor</altitudeLayer>
+    <graphicData>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(3.0,3.0)</drawSize>
+      </graphicData>
+    <size>(1,1)</size>
+    <designationCategory>Floors</designationCategory>
+    <passability>Standable</passability>
+    <fillPercent>0</fillPercent>
+    <useHitPoints>False</useHitPoints>
+    <uiIconScale>0.8</uiIconScale>
+    <building>      
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+    </building>
+  </ThingDef>
+
+  
+</Defs>  

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<ThingDef ParentName="DiagonalFloorBase">
+    <defName>DiagonalPavedTile</defName>
+    <label>diagonal paved tile</label>
+    <description>Diagonal concrete tiles. They are cheaper and easier to lay. Diagonal tiles do not act as real flooring.</description>
+    <statBases>
+      <WorkToBuild>200</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>DiagonalRim/Floors/PavedTile/tile</texPath>
+    </graphicData>
+                <uiIconPath>DiagonalRim/Floors/PavedTile/MenuIcon</uiIconPath>
+
+        <costList>
+      <Steel>1</Steel>
+    </costList>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+<!-- Metal Tiles-->
+
+
+
+  <DesignatorDropdownGroupDef>
+    <defName>Floor_Tile_Metal_Diagonal</defName>
+  </DesignatorDropdownGroupDef>
+
+    <ThingDef ParentName="DiagonalFloorBase" Name="DiagonalTileMetalBase" Abstract="True">
+    <constructEffect>ConstructMetal</constructEffect>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>400</WorkToBuild>
+      <Mass>1</Mass>
+      <Flammability>0.0</Flammability>
+    </statBases>
+    <designatorDropdown>Floor_Tile_Metal_Diagonal</designatorDropdown>
+      <researchPrerequisites>
+      <li>Smithing</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+  </ThingDef>  
+
+  <ThingDef ParentName="DiagonalTileMetalBase">
+    <defName>DiagonalTileSteel</defName>
+    <label>diagonal steel tile</label>
+    <description>Diagonal steel tiles. They are cheaper and easier to lay. Diagonal tiles do not act as real flooring.</description>
+    <statBases>
+      <Beauty>0</Beauty>
+      <Cleanliness>0.1</Cleanliness>
+    </statBases>
+    <graphicData>
+      <texPath>DiagonalRim/Floors/GenericTile/SteelTile/tile</texPath>
+    </graphicData>
+    <uiIconPath>DiagonalRim/Floors/GenericTile/SteelTile/MenuIcon</uiIconPath>
+        <costList>
+      <Steel>4</Steel>
+    </costList>
+  </ThingDef>  
+
+  <ThingDef ParentName="DiagonalTileMetalBase">
+    <defName>DiagonalTileSilver</defName>
+    <label>diagonal silver tile</label>
+    <description>Diagonal silver tiles. They are cheaper and easier to lay. Diagonal tiles do not act as real flooring.</description>
+    <statBases>
+      <Beauty>2</Beauty>
+      <Cleanliness>0.1</Cleanliness>
+    </statBases>
+    <graphicData>
+      <texPath>DiagonalRim/Floors/GenericTile/SilverTile/tile</texPath>
+    </graphicData>
+        <uiIconPath>DiagonalRim/Floors/GenericTile/SilverTile/MenuIcon</uiIconPath>
+        <costList>
+      <Silver>35</Silver>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="DiagonalTileMetalBase">
+    <defName>DiagonalTileGold</defName>
+    <label>diagonal gold tile</label>
+    <description>Diagonal gold tiles. They are cheaper and easier to lay. Diagonal tiles do not act as real flooring.</description>
+    <statBases>
+      <Beauty>4</Beauty>
+      <Cleanliness>0.1</Cleanliness>
+    </statBases>
+    <graphicData>
+      <texPath>DiagonalRim/Floors/GenericTile/GoldTile/tile</texPath>
+    </graphicData>
+        <uiIconPath>DiagonalRim/Floors/GenericTile/GoldTile/MenuIcon</uiIconPath>
+        <costList>
+      <Gold>35</Gold>
+    </costList>
+  </ThingDef>
+  
+   
+
+</Defs>  
