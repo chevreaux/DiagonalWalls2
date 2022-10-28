@@ -42,7 +42,7 @@
     <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded> <!-- Best affordance needed for stone -->
     <holdsRoof>true</holdsRoof>
-    <designationCategory>Structure</designationCategory>
+    <designationCategory>chv_Diagonal</designationCategory>
     <staticSunShadowHeight>1.0</staticSunShadowHeight>
     <blockLight>true</blockLight>
     <canOverlapZones>false</canOverlapZones>
@@ -379,5 +379,146 @@
     <designationHotKey>Misc1</designationHotKey>
   </ThingDef>
 
+
+  <ThingDef ParentName="BuildingBase" Name="DiagonalFenceBase" Abstract="True">
+    <defName>DiagonalFence</defName>
+    <label>dia. fence</label>
+    <description>A diagonal fence post for animal pens.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <graphicClass>Graphic_Appearances</graphicClass>
+      <linkType>Asymmetric</linkType>
+      <linkFlags>
+        <li>Fences</li>
+      </linkFlags>
+      <asymmetricLink>
+        <linkFlags>
+          <li>Wall</li>
+          <li>Rock</li>
+        </linkFlags>
+        <linkToDoors>true</linkToDoors>
+        <drawDoorBorderEast>
+          <color>(0,0,0)</color>
+          <size>(0.04, 0.77)</size>
+          <offset>(0.5, 0, -0.08)</offset>
+        </drawDoorBorderEast>
+        <drawDoorBorderWest>
+          <color>(0,0,0)</color>
+          <size>(0.04, 0.77)</size>
+          <offset>(-0.5, 0, -0.08)</offset>
+        </drawDoorBorderWest>
+      </asymmetricLink>
+      <damageData>
+        <rect>(0.35,0.1,0.3,0.7)</rect>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+      <WorkToBuild>70</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <costStuffCount>1</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>80</pathCost>
+    <blockWind>false</blockWind>
+    <fillPercent>0.25</fillPercent>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>chv_Diagonal</designationCategory>
+    <uiOrder>2020</uiOrder>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <building>
+      <isInert>true</isInert>
+      <isFence>true</isFence>
+      <isPlaceOverableWall>true</isPlaceOverableWall>
+      <ai_chillDestination>false</ai_chillDestination>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+      <relatedBuildCommands>
+        <li>PenMarker</li>
+        <li>FenceGate</li>
+      </relatedBuildCommands>
+      <paintable>true</paintable>
+    </building>
+  </ThingDef>
+
+<ThingDef ParentName="DiagonalFenceBase">
+ <defName>DiagonalFence</defName>
+    <label>dia. fence</label>
+    <description>A fence made of posts joined by crossbars used for building pens for certain kinds of animals.</description>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/Fences/Fence</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/Fences/Fence_Blueprint</texPath>
+      <graphicClass>Graphic_Appearances</graphicClass>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/Fences/Fence_MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Metal</appearance>
+        <iconPath>DiagonalRim/Walls/Fences/FenceMetal_MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalFenceBase">
+ <defName>ConnectorFenceL</defName>
+  <label>connector fence (left)</label>
+  <description>Gives a smoother connection between diagonal and regular fences.</description>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/Fences/ConnectorFenceL</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/Fences/ConnectorFenceL_Blueprint</texPath>
+      <graphicClass>Graphic_Appearances</graphicClass>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/Fences/ConnectorFenceL_MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Metal</appearance>
+        <iconPath>DiagonalRim/Walls/Fences/ConnectorFenceLMetal_MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
+
+<ThingDef ParentName="DiagonalFenceBase">
+ <defName>ConnectorFenceR</defName>
+  <label>connector fence (right)</label>
+  <description>Gives a smoother connection between diagonal and regular fences.</description>
+  <graphicData>
+    <texPath>DiagonalRim/Walls/Fences/ConnectorFenceR</texPath>
+  </graphicData>
+  <building>
+    <blueprintGraphicData>
+      <texPath>DiagonalRim/Walls/Fences/ConnectorFenceR_Blueprint</texPath>
+      <graphicClass>Graphic_Appearances</graphicClass>
+    </blueprintGraphicData>
+  </building>
+  <uiIconPath>DiagonalRim/Walls/Fences/ConnectorFenceR_MenuIcon</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Metal</appearance>
+        <iconPath>DiagonalRim/Walls/Fences/ConnectorFenceRMetal_MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+</ThingDef>
 
 </Defs>
