@@ -458,7 +458,7 @@
 <ThingDef ParentName="DiagonalFenceBase">
  <defName>DiagonalFence</defName>
     <label>dia. fence</label>
-    <description>A fence made of posts joined by crossbars used for building pens for certain kinds of animals.</description>
+    <description>A diagonal fence made of posts joined by crossbars used for building pens for certain kinds of animals.</description>
   <graphicData>
     <texPath>DiagonalRim/Walls/Fences/Fence</texPath>
   </graphicData>

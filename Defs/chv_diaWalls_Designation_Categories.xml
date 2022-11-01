@@ -5,7 +5,7 @@
     <defName>chv_Diagonal</defName>
     <label>Diagonal</label>
     <description>Diagonal walls and other structures.</description>
-    <order>350</order>
+    <order>650</order>
     <specialDesignatorClasses>
       <li>Designator_Deconstruct</li>
     </specialDesignatorClasses>

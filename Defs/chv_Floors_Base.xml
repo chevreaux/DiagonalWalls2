@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
+  <DesignatorDropdownGroupDef>
+    <defName>Floor_Hard_Edge</defName>
+  </DesignatorDropdownGroupDef>
+
   <TerrainDef ParentName="NaturalTerrainBase">
     <defName>HardSoil</defName>
-    <label>hard soil</label>
+    <label>soil (hard edge)</label>
     <description>Soil with a hard edge. Will not blend with other flooring.</description>
     <designationCategory>Floors</designationCategory>
+    <designatorDropdown>Floor_Hard_Edge</designatorDropdown>
     <texturePath>Terrain/Surfaces/Soil</texturePath>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <layerable>true</layerable>
@@ -40,7 +46,147 @@
     </tools>
     <constructEffect>ConstructDirt</constructEffect>
     <placeWorkers>
-      <li>Placeworker_HardSoil.Placeworker_HardSoil</li> 
+      <li>chvDiagonalWalls.Placeworker_Fertility100</li> 
+    </placeWorkers>
+  </TerrainDef>
+
+  <TerrainDef ParentName="NaturalTerrainBase">
+    <defName>chvHardSoilRich</defName>
+    <label>rich soil (hard edge)</label>
+    <description>Rich soil with a hard edge. Will not blend with other flooring.</description>
+    <designationCategory>Floors</designationCategory>
+    <designatorDropdown>Floor_Hard_Edge</designatorDropdown>
+    <texturePath>Terrain/Surfaces/SoilRich</texturePath>
+    <pollutedTexturePath>Terrain/Surfaces/SoilRichPolluted</pollutedTexturePath>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>335</renderPrecedence>
+    <pathCost>2</pathCost>
+    <layerable>true</layerable>
+    <statBases>
+      <Beauty>-3</Beauty>
+      <BeautyOutdoors>0</BeautyOutdoors>
+      <WorkToBuild>50</WorkToBuild>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>GrowSoil</li>
+      <li>Diggable</li>
+    </affordances>
+    <generatedFilth>Filth_Dirt</generatedFilth>
+    <fertility>1.4</fertility>
+    <takeFootprints>True</takeFootprints>
+    <tools>
+      <li>
+        <label>dirt</label>
+        <capacities>
+          <li>KickMaterialInEyes</li>
+        </capacities>
+        <hediff>DirtInEyes</hediff>
+        <cooldownTime>1.5</cooldownTime>
+      </li>
+    </tools>
+    <tags>
+      <li>Soil</li>
+    </tags>
+    <placeWorkers>
+      <li>chvDiagonalWalls.Placeworker_Fertility140</li> 
+    </placeWorkers>
+  </TerrainDef>
+
+  <TerrainDef ParentName="NaturalTerrainBase">
+    <defName>chvHardSand</defName>
+    <label>sand (hard edge)</label>
+    <description>Sand with a hard edge. Will not blend with other flooring.</description>
+    <designationCategory>Floors</designationCategory>
+    <designatorDropdown>Floor_Hard_Edge</designatorDropdown>
+    <texturePath>Terrain/Surfaces/Sand</texturePath>
+    <pollutedTexturePath>Terrain/Surfaces/SandPolluted</pollutedTexturePath>
+    <pollutionOverlayTexturePath>Terrain/Surfaces/PollutionSand</pollutionOverlayTexturePath>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>350</renderPrecedence>
+    <pathCost>4</pathCost>
+    <layerable>true</layerable>
+    <statBases>
+      <Beauty>-3</Beauty>
+      <BeautyOutdoors>0</BeautyOutdoors>
+      <WorkToBuild>50</WorkToBuild>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <scatterType>SoftDry</scatterType>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>Diggable</li>
+    </affordances>
+    <generatedFilth>Filth_Sand</generatedFilth>
+    <fertility>0.10</fertility>
+    <takeFootprints>True</takeFootprints>
+    <tools>
+      <li>
+        <label>sand</label>
+        <capacities>
+          <li>KickMaterialInEyes</li>
+        </capacities>
+        <hediff>SandInEyes</hediff>
+        <cooldownTime>1.5</cooldownTime>
+      </li>
+    </tools>
+            <placeWorkers>
+      <li>chvDiagonalWalls.Placeworker_Fertility10</li> 
+    </placeWorkers>
+    <pollutionColor>(1, 1, 1, 0.25)</pollutionColor>
+  </TerrainDef>
+
+  <TerrainDef ParentName="NaturalTerrainBase">
+    <defName>chvHardGravel</defName>
+    <label>stony soil (hard edge)</label>
+    <description>Stony soil with a hard edge. Will not blend with other flooring.</description>
+    <designationCategory>Floors</designationCategory>
+    <designatorDropdown>Floor_Hard_Edge</designatorDropdown>
+    <texturePath>Terrain/Surfaces/Gravel</texturePath>
+    <pollutedTexturePath>Terrain/Surfaces/GravelPolluted</pollutedTexturePath>
+    <pollutionOverlayTexturePath>Terrain/Surfaces/RoughStonePollutionOverlay</pollutionOverlayTexturePath>
+    <pollutionShaderType MayRequire="Ludeon.RimWorld.Biotech">TerrainFadeRoughLinearAdd</pollutionShaderType>
+    <edgeType>Hard</edgeType>
+    <layerable>true</layerable>
+    <renderPrecedence>320</renderPrecedence>
+    <pathCost>2</pathCost>
+    <statBases>
+      <Beauty>-3</Beauty>
+      <BeautyOutdoors>0</BeautyOutdoors>
+      <WorkToBuild>50</WorkToBuild>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <scatterType>Rocky</scatterType>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>GrowSoil</li>
+      <li>Diggable</li>
+    </affordances>
+    <generatedFilth>Filth_Dirt</generatedFilth>
+    <fertility>0.7</fertility>
+    <takeFootprints>True</takeFootprints>
+    <tools>
+      <li>
+        <label>gravel</label>
+        <capacities>
+          <li>KickMaterialInEyes</li>
+        </capacities>
+        <hediff>GravelInEyes</hediff>
+        <cooldownTime>1.5</cooldownTime>
+      </li>
+    </tools>
+    <tags>
+      <li>Soil</li>
+    </tags>
+        <placeWorkers>
+      <li>chvDiagonalWalls.Placeworker_Fertility70</li> 
     </placeWorkers>
   </TerrainDef>
 
