@@ -53,6 +53,7 @@
       <li>Stony</li>
     </stuffCategories>
     <building>
+      <paintable>true</paintable>
       <isInert>true</isInert>
       <isPlaceOverableWall>true</isPlaceOverableWall>
       <ai_chillDestination>false</ai_chillDestination>
